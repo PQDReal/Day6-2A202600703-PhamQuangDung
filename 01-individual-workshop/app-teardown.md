@@ -1,11 +1,3 @@
-# Workshop - Mổ App AI Thật: MoMo - Moni
-
-**Thời gian:** 35-45 phút  
-**Hình thức:** cá nhân trước, chia sẻ theo nhóm sau  
-**Output:** finding note + sketch `as-is / to-be`
-
-Mục tiêu không phải chấm "UI đẹp hay xấu". Mục tiêu là dùng sản phẩm thật như một bài needfinding: tìm chỗ product gãy trong workflow thật, rồi viết finding đó thành quyết định product.
-
 ## 1. Chọn một sản phẩm để dùng thử
 
 | Sản phẩm | AI feature | Cách truy cập |
