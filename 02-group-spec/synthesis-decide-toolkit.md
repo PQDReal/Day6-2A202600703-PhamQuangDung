@@ -1,85 +1,73 @@
-# Toolkit — Từ Evidence Đến Build Slice
+# Toolkit — Từ Evidence Đến Build Slice (Moni Tài Chính)
 
-Dùng sau khi nhóm đã có evidence. Mục tiêu là chốt một build slice đủ nhỏ cho Day 06.
+Dùng để đúc rút bằng chứng thực tế (evidence) thành thiết kế sản phẩm cụ thể và chốt một build slice đủ nhỏ để demo xuất sắc trong 3-5 phút cho Day 06.
 
-## 1. Gom evidence thành cụm
+---
 
-Gom theo **workflow/pain**, không gom theo tên feature.
+## 1. Gom Evidence Thành Cụm (Clustering)
+Chúng tôi không gom bằng chứng theo tính năng, mà gom theo trải nghiệm thực tế và nỗi đau (pain point) của người dùng ví MoMo:
 
-Ví dụ cụm tốt:
+* **Cụm 1: Bị ngợp thông tin quảng cáo (Cognitive Overload):**
+  * Trang chủ MoMo có quá nhiều banner quảng cáo (Ví trả sau, vay nhanh, lắc xì, hoàn tiền) che mất số liệu chi tiêu.
+  * User muốn quản lý tài chính phải mò qua nhiều bước phức tạp.
+* **Cụm 2: Số liệu khô khan không có giải thích (Data without Insights):**
+  * MoMo có biểu đồ chi tiêu nhưng chỉ là số liệu tĩnh (ví dụ: "Tháng này tiêu 12.000.000đ, tăng 15%").
+  * User thấy tăng nhưng không hiểu cụ thể vì sao tăng (là do ăn uống tăng hay do một giao dịch lớn đột xuất).
+* **Cụm 3: Các giao dịch mập mờ, thiếu phân loại (The "Unclassified" Black Box):**
+  * Các khoản chuyển khoản cá nhân (chia tiền ăn, trả nợ) bị bỏ trống danh mục ("Chưa phân loại").
+  * Giao dịch dịch vụ trực tuyến chỉ ghi tên chung chung (Google Services, Apple Bill) và bị gán bừa vào "Giải trí", làm sai lệch báo cáo tài chính khiến user mất lòng tin vào app.
 
-- "Không biết chọn chuyên khoa"
-- "Không hiểu vì sao bị tính phí"
-- "Muốn sửa output nhưng không có chỗ sửa"
-- "Bot trả lời tự tin nhưng không dẫn nguồn"
+---
 
-## 2. Viết insight
-
-Form:
-
+## 2. Viết Insight
+Dựa trên các cụm bằng chứng trên, nhóm đúc rút được insight cốt lõi:
 ```text
-User [segment] không chỉ cần [surface need].
-Họ thật ra cần [deeper need],
-vì [evidence pattern].
+Người dùng trẻ (sinh viên/người mới đi làm) không chỉ cần một biểu đồ thống kê số liệu chi tiêu tĩnh.
+Họ thực sự cần một trợ lý có khả năng giải thích bằng ngôn ngữ tự nhiên về lý do biến động dòng tiền,
+đồng thời cung cấp phương thức chỉnh sửa cực kỳ đơn giản khi AI phân loại sai lệch,
+bởi vì họ chỉ có cảm giác làm chủ tài chính khi chính họ là người quyết định phân loại cuối cùng.
 ```
 
-Ví dụ:
+---
 
+## 3. Viết Opportunity (Cơ hội sản phẩm)
 ```text
-Người lần đầu đi khám không chỉ cần danh sách chuyên khoa.
-Họ cần hỗ trợ ra quyết định an toàn,
-vì nhiều review/observation cho thấy họ không biết triệu chứng của mình nên đi khoa nào.
+Cơ hội là sử dụng AI để xây dựng một Action Layer tích hợp trực tiếp vào lịch sử giao dịch (Moni AI),
+giúp tự động trích xuất thông tin, cảnh báo rủi ro lạ, đề xuất nhắc nhở thanh toán hóa đơn định kỳ,
+nhưng luôn giữ vai trò hỗ trợ (Augmentation) - cho phép user xác nhận hoặc sửa đổi danh mục chỉ bằng 1-click.
 ```
 
-## 3. Viết opportunity
+---
 
-Form:
+## 4. Đánh Giá Build Slice (5 Tiêu Chí Thành Công)
 
-```text
-Cơ hội là dùng AI để [augment/automate hành động hẹp],
-giúp user [kết quả],
-trong khi vẫn kiểm soát [failure/risk].
-```
+Chúng tôi đánh giá phạm vi xây dựng (build slice) hiện tại qua 5 câu hỏi để đảm bảo tính khả thi và hiệu quả:
 
-## 4. Chọn build slice
+| Câu hỏi kiểm thử | Trạng thái | Chi tiết đối chiếu với Prototype |
+|---|---|---|
+| **User cụ thể chưa?** | [x] Đạt | Hoàng, sinh viên năm 3 dùng MoMo hàng ngày, cần kiểm soát dòng tiền cuối tháng. |
+| **Task đủ hẹp chưa?** | [x] Đạt | Demo tập trung vào đúng một cuộc đối thoại ngắn qua chatbot Moni giải quyết 4 giao dịch tiêu biểu. |
+| **AI decision rõ chưa?** | [x] Đạt | AI hỗ trợ phân tích chi tiêu, gợi ý phân loại khoản Nguyễn Đông Anh và cảnh báo khoản Google. |
+| **Failure path rõ chưa?** | [x] Đạt | Có case AI phân loại sai khoản Google là "Giải trí" và user sửa lại thành "Học tập / Công cụ". |
+| **Có evidence không?** | [x] Đạt | Có 5 bằng chứng từ trải nghiệm thực tế (Self-use) và khảo sát nhanh 5 người dùng thực tế. |
 
-Build slice tốt phải qua 5 câu hỏi:
+---
 
-| Câu hỏi | Đạt khi |
-|---|---|
-| User cụ thể chưa? | Nói được ai dùng, trong bối cảnh nào. |
-| Task đủ hẹp chưa? | Demo được trong 3-5 phút. |
-| AI decision rõ chưa? | AI gợi ý/tự làm một việc cụ thể. |
-| Failure path rõ chưa? | Có một case AI không chắc hoặc sai để test. |
-| Có evidence không? | Có bằng chứng từ self-use/review/user/competitor. |
+## 5. Quyết Định Scope & Hướng Đi
+* **Tình huống:** Ban đầu nhóm định làm một ứng dụng quản lý tài chính độc lập hoặc chatbot tự do (free-text) hỗ trợ tất cả các câu hỏi của user.
+* **Quyết định cắt scope:** Cắt giảm toàn bộ tính năng nhập liệu tự do và kết nối ngân hàng thật. Tập trung 100% vào việc giả lập **AI Action Layer ngay trên giao diện MoMo** với các Suggested Prompt Chips để dẫn dắt user đi qua đúng 4 paths nghiệp vụ trong 3 phút thuyết trình.
+* **Lý do:** Giảm thiểu rủi ro AI hiểu sai câu hỏi tự do trong lúc demo trực tiếp, đồng thời làm nổi bật được cơ chế tương tác Augmentation (AI gợi ý - User quyết định).
 
-## 5. Quyết định: giữ, giảm scope, hay đổi hướng?
+---
 
-| Tình huống | Quyết định |
-|---|---|
-| Evidence yếu, user mơ hồ | Dừng build sâu; quay lại research 20 phút. |
-| Ý tưởng quá rộng | Giữ domain, cắt xuống một flow. |
-| AI không cần thiết | Dùng rule/manual prototype; ghi rõ vì sao không dùng AI sâu. |
-| Rủi ro cao | Chọn augmentation hoặc conditional automation. |
-| Không demo được trong 1 ngày | Đưa phần lớn vào backlog, giữ một path nhỏ. |
+## 6. Câu Chốt Định Hướng (Synthesis Statement)
+Dựa trên **bằng chứng về sự mập mờ trong lịch sử giao dịch MoMo và nhu cầu hiểu sâu về chi tiêu**, nhóm sẽ xây dựng **prototype AI Action Layer dưới dạng chatbot Moni**, dành cho **sinh viên và người mới đi làm**, để giải quyết **pain point "tiền đi đâu mất cuối tháng"** bằng cách **giúp AI tự phân tích, gợi ý phân loại và nhắc thanh toán định kỳ**, và sẽ test failure path **khi AI phân loại sai khoản thanh toán Google và cách user chỉnh sửa lại báo cáo tài chính (Correction Loop)**.
 
-## 6. Câu chốt cuối
+---
 
-Điền câu này trước khi rời lớp:
-
-```text
-Dựa trên [evidence],
-nhóm sẽ build [prototype slice],
-cho [user],
-để giải quyết [pain],
-bằng cách AI [augment/automate task],
-và sẽ test failure path [failure mode].
-```
-
-## 7. Backlog
-
-Những thứ **không build trong Day 06**:
-
-- 
-- 
-- 
+## 7. Backlog (Không xây dựng trong Day 06)
+Các tính năng sau sẽ được đưa vào hàng đợi phát triển sau buổi demo:
+1. **Real-time API Sync:** Tự động đồng bộ giao dịch từ các ngân hàng và ví điện tử khác qua API bảo mật.
+2. **Auto-payment (Thanh toán tự động):** Tự động trừ tiền thanh toán hóa đơn khi đến ngày nhắc nhở nếu user bật tính năng auto-pay.
+3. **Voice-guided financial assistant:** Trợ lý ảo phản hồi bằng giọng nói tự nhiên thay vì chỉ hiển thị text và cards.
+4. **Predictive Budgeting:** AI dự báo số dư ví vào cuối tháng dựa trên thói quen chi tiêu của các tuần trước.
