@@ -9,13 +9,13 @@ Chúng tôi không gom bằng chứng theo tính năng, mà gom theo trải nghi
 
 * **Cụm 1: Bị ngợp thông tin quảng cáo (Cognitive Overload):**
   * Trang chủ MoMo có quá nhiều banner quảng cáo (Ví trả sau, vay nhanh, lắc xì, hoàn tiền) che mất số liệu chi tiêu.
-  * User muốn quản lý tài chính phải mò qua nhiều bước phức tạp.
+  * User muốn quản lý tài chính phải thao tác qua nhiều bước phức tạp.
 * **Cụm 2: Số liệu khô khan không có giải thích (Data without Insights):**
-  * MoMo có biểu đồ chi tiêu nhưng chỉ là số liệu tĩnh (ví dụ: "Tháng này tiêu 12.000.000đ, tăng 15%").
-  * User thấy tăng nhưng không hiểu cụ thể vì sao tăng (là do ăn uống tăng hay do một giao dịch lớn đột xuất).
+  * MoMo có mục "Tổng quan tháng" hiển thị tổng chi và so sánh cùng kỳ, nhưng chỉ là con số tĩnh (ví dụ: "Tổng chi 271.667đ, tăng ↑271.667đ so với cùng kỳ").
+  * User thấy chi tiêu tăng nhưng không hiểu cụ thể vì sao tăng (là do ăn uống tăng hay do một giao dịch lớn đột xuất như thanh toán Google).
 * **Cụm 3: Các giao dịch mập mờ, thiếu phân loại (The "Unclassified" Black Box):**
-  * Các khoản chuyển khoản cá nhân (chia tiền ăn, trả nợ) bị bỏ trống danh mục ("Chưa phân loại").
-  * Giao dịch dịch vụ trực tuyến chỉ ghi tên chung chung (Google Services, Apple Bill) và bị gán bừa vào "Giải trí", làm sai lệch báo cáo tài chính khiến user mất lòng tin vào app.
+  * Các khoản chuyển khoản cá nhân (chia tiền ăn, trả nợ) bị gán "Chưa phân loại" — việc không tự gán tùy ý là hợp lý, nhưng MoMo dừng ở đó và không chủ động gợi ý giúp user phân loại tiếp (Ăn uống? Trả nợ? Cá nhân?), nên khoản đó cứ bị bỏ trống mãi.
+  * Giao dịch dịch vụ trực tuyến chỉ ghi tên chung chung ("Thanh toán Google") và bị gán nhầm vào "Giải trí" dù thực tế có thể là công cụ làm việc/học tập, làm sai lệch báo cáo tài chính.
 
 ---
 
@@ -49,7 +49,7 @@ Chúng tôi đánh giá phạm vi xây dựng (build slice) hiện tại qua 5 c
 | **Task đủ hẹp chưa?** | [x] Đạt | Demo tập trung vào đúng một cuộc đối thoại ngắn qua chatbot Moni giải quyết 4 giao dịch tiêu biểu. |
 | **AI decision rõ chưa?** | [x] Đạt | AI hỗ trợ phân tích chi tiêu, gợi ý phân loại khoản Nguyễn Đông Anh và cảnh báo khoản Google. |
 | **Failure path rõ chưa?** | [x] Đạt | Có case AI phân loại sai khoản Google là "Giải trí" và user sửa lại thành "Học tập / Công cụ". |
-| **Có evidence không?** | [x] Đạt | Có 5 bằng chứng từ trải nghiệm thực tế (Self-use) và khảo sát nhanh 5 người dùng thực tế. |
+| **Có evidence không?** | [x] Đạt | Có 4 bằng chứng từ trải nghiệm thực tế (Self-use) kèm screenshot và khảo sát nhanh 4 người dùng thực tế. |
 
 ---
 
